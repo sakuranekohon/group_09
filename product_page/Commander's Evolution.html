@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+        <html lang="en">
+        
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Product to ADS</title>
+            <link rel="stylesheet" type="text/css" href="../styles/style.css">
+            <link href="../styles/mobile.css" rel="stylesheet">
+            <link rel="icon" href="../images/favicon.ico">
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.js"></script>
+        </head>
+        
+        <body>
+            <nav class="bar">
+                <div class="bar_div">
+                    <div class="bar_left">
+                        <a href="../index.php" target="_parent"><img src="../images/logo.svg"></a>
+                    </div>
+                    <div class="bar_middle">
+                        <form>
+                        <a href="../search.php" target=_parent><input type="text" placeholder="搜尋"></a>
+                            <button type="submit"><img src="../images/search.svg" alt="Search" class="bar_img_size"></button>
+                        </form>
+                    </div>
+        
+                    <div class="bar_right">
+                        <button type="button" class="bar_button"><a href="../cart.php" target="_parent">
+                                <img src="../images/cart.svg" alt="Cart" class="bar_img_size"></a></button>
+                        <span style="width: 100%;max-width: 15px;"></span>
+                        <button type="button" class="bar_button" onclick="intoMemberInfo()"><img src="../images/user.svg" alt="Log in" class="bar_img_size"></button>
+                    </div>
+                </div>
+            </nav>
+            <nav class="mobilebar">
+        <div class="mobile_div">
+            <div class="mobile_logo">
+                <a href="../index.php"><img src="../images/logo.svg" alt="logo"></a>
+            </div>
+            <div class="mobile_menu">
+                <button type="button" id="menubtn" onclick="openlist(this)">
+                    <div class="more_line"></div>
+                    <div class="more_line"></div>
+                    <div class="more_line"></div>
+                </button>
+                <div class="mobile_menuInfo">
+                    <ul class="mobile_menuInfo_list">
+                        <li>
+                            <!-- <input type="text" id="search" placeholder="關鍵字"> -->
+                            <a href="../search.php">搜尋</a>
+                        </li>
+                        <li>
+                            <span id="taglistbtn" onclick="openlist(this)">商品分類</span>
+                            <ul class="mobile_menuInfo_tag_list" id="tag_list">
+                                <!-- <li>少女</li>
+                                <li>血腥</li>
+                                <li>黑暗</li> -->
+                            </ul>
+                        </li>
+                        <li><a href="../cart.php">購物車</a></li>
+                        <li>
+                            <span id="memberlistbtn" onclick="openlist(this)">會員</span>
+                            <ul class="mobile_menuInfo_member_list">
+                                <li><a href="../memberData.php">會員資料</a></li>
+                                <li><a href="../orderStatus.php">訂單進度</a></li>
+                                <li><a href="../browsingHistory.php">瀏覽紀錄</a></li>
+                                <li><a href="../buyHistory.php">購買紀錄</a></li>
+                                <li><a href="../manageMember.php">管理會員</a></li>
+                                <li><a href="../manageComment.php">管理評論</a></li>
+                                <li><a href="../manageOrder.php">管理訂單</a></li>
+                                <li><a href="../manageProduct.php">管理商品</a></li>
+                                <li><a href="../adSelect.php">廣告分類</a></li>
+                            </ul>
+                        </li>
+                        <li><button onclick="logout()">登出</button></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+            <div class="product_window">
+                <div class="home_sp_select">
+                    <h3>商品分類</h3>
+                    <ul class="home_sp_sel" id="tag_list">
+                    </ul>
+                </div>
+                <div class="product">
+                    <div>
+                        <div class="product_item">
+                            <div id ="product_id" hidden>36</div>
+                            <div class="product_item_img"><img src="../backend/images/Commander's Evolution.png" alt="product"></div>
+                            <div class="product_item_item">
+                                <span>Commander's Evolution</span>
+                                <div class="product_item_price"><span>價格</span><span>$5690</span></div>
+                                <form action="" >
+                                    <div class="product_item_quality">
+                                        <span>數量</span>
+                                        <div class="product_item_quality_item">
+                                            <button type="button" onclick="minus()"><img src="../images/minus.svg" alt="minus" ></button>
+                                            <input type="text" value="1" name="quanity" id="quanity">
+                                            <button type="button" onclick="plus()"><img src="../images/plus.svg" alt="plus" ></button>
+                                        </div>
+                                    </div>
+                                    <div class="product_item_add"><button type="button" onclick="add_cart()"><img src="../images/cart.svg"
+                                                alt=""><span>加入購物車</span></button></div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="product_describe">
+                            <p>Commander's Evolution 是一個關於戰場上指揮官的作品系列。藝術家透過這些作品展示了歷史上的變化，特別是在性別平權方面的進展。這些作品呈現了女性指揮官在戰場上掌握軍隊的權力和影響力的場景。
+
+在 Commander's Evolution 的作品中，您將看到自信而堅毅的女性指揮官，她們站在戰場的最前線，帶領著士兵們勇敢地迎接挑戰。這些作品彰顯了性別不再是決定一個人在軍事領域中的地位和角色的限制因素，而是以能力和才華為導向。
+
+這些作品旨在鼓勵和激勵人們，尤其是女性，發揮自己的潛力，追求他們在戰場上的領導地位。它們代表著一個更加公平和平等的社會，其中每個人都有機會在各個領域中展現自己的才華和能力。
+
+透過 Commander's Evolution 的作品，您將感受到歷史的變革和進步，以及對於平權和多元性的重視。這些作品向我們傳遞著一個重要的訊息，即無論性別、種族或背景如何，每個人都有權利並有能力在戰場上扮演重要的指揮官角色。
+
+迎接戰場上指揮官的新時代，感受Commander's Evolution帶來的變革和啟發！</p>
+                        </div>
+                        <div class="product_comment">
+                            <h2>商品評論</h2>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="copyright_line">
+                    <span>sakuranekohon and yufang © 2023</span>
+                </div>
+            </div>
+            <script src="../scripts/product.js"></script>
+            <script src="../scripts/search.js"></script>
+            <script src="../scripts/logSignInOut.js"></script>
+            <script src="../scripts/tagSearch.js"></script>
+            <script src="../scripts/mobileBar.js"></script>
+        </body>
+        
+        </html>

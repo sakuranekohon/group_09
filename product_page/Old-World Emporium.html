@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+        <html lang="en">
+        
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Product to ADS</title>
+            <link rel="stylesheet" type="text/css" href="../styles/style.css">
+            <link href="../styles/mobile.css" rel="stylesheet">
+            <link rel="icon" href="../images/favicon.ico">
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.js"></script>
+        </head>
+        
+        <body>
+            <nav class="bar">
+                <div class="bar_div">
+                    <div class="bar_left">
+                        <a href="../index.php" target="_parent"><img src="../images/logo.svg"></a>
+                    </div>
+                    <div class="bar_middle">
+                        <form>
+                        <a href="../search.php" target=_parent><input type="text" placeholder="搜尋"></a>
+                            <button type="submit"><img src="../images/search.svg" alt="Search" class="bar_img_size"></button>
+                        </form>
+                    </div>
+        
+                    <div class="bar_right">
+                        <button type="button" class="bar_button"><a href="../cart.php" target="_parent">
+                                <img src="../images/cart.svg" alt="Cart" class="bar_img_size"></a></button>
+                        <span style="width: 100%;max-width: 15px;"></span>
+                        <button type="button" class="bar_button" onclick="intoMemberInfo()"><img src="../images/user.svg" alt="Log in" class="bar_img_size"></button>
+                    </div>
+                </div>
+            </nav>
+            <nav class="mobilebar">
+        <div class="mobile_div">
+            <div class="mobile_logo">
+                <a href="../index.php"><img src="../images/logo.svg" alt="logo"></a>
+            </div>
+            <div class="mobile_menu">
+                <button type="button" id="menubtn" onclick="openlist(this)">
+                    <div class="more_line"></div>
+                    <div class="more_line"></div>
+                    <div class="more_line"></div>
+                </button>
+                <div class="mobile_menuInfo">
+                    <ul class="mobile_menuInfo_list">
+                        <li>
+                            <!-- <input type="text" id="search" placeholder="關鍵字"> -->
+                            <a href="../search.php">搜尋</a>
+                        </li>
+                        <li>
+                            <span id="taglistbtn" onclick="openlist(this)">商品分類</span>
+                            <ul class="mobile_menuInfo_tag_list" id="tag_list">
+                                <!-- <li>少女</li>
+                                <li>血腥</li>
+                                <li>黑暗</li> -->
+                            </ul>
+                        </li>
+                        <li><a href="../cart.php">購物車</a></li>
+                        <li>
+                            <span id="memberlistbtn" onclick="openlist(this)">會員</span>
+                            <ul class="mobile_menuInfo_member_list">
+                                <li><a href="../memberData.php">會員資料</a></li>
+                                <li><a href="../orderStatus.php">訂單進度</a></li>
+                                <li><a href="../browsingHistory.php">瀏覽紀錄</a></li>
+                                <li><a href="../buyHistory.php">購買紀錄</a></li>
+                                <li><a href="../manageMember.php">管理會員</a></li>
+                                <li><a href="../manageComment.php">管理評論</a></li>
+                                <li><a href="../manageOrder.php">管理訂單</a></li>
+                                <li><a href="../manageProduct.php">管理商品</a></li>
+                                <li><a href="../adSelect.php">廣告分類</a></li>
+                            </ul>
+                        </li>
+                        <li><button onclick="logout()">登出</button></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+            <div class="product_window">
+                <div class="home_sp_select">
+                    <h3>商品分類</h3>
+                    <ul class="home_sp_sel" id="tag_list">
+                    </ul>
+                </div>
+                <div class="product">
+                    <div>
+                        <div class="product_item">
+                            <div id ="product_id" hidden>75</div>
+                            <div class="product_item_img"><img src="../backend/images/Old-World Emporium.jpg" alt="product"></div>
+                            <div class="product_item_item">
+                                <span>Old-World Emporium</span>
+                                <div class="product_item_price"><span>價格</span><span>$777</span></div>
+                                <form action="" >
+                                    <div class="product_item_quality">
+                                        <span>數量</span>
+                                        <div class="product_item_quality_item">
+                                            <button type="button" onclick="minus()"><img src="../images/minus.svg" alt="minus" ></button>
+                                            <input type="text" value="1" name="quanity" id="quanity">
+                                            <button type="button" onclick="plus()"><img src="../images/plus.svg" alt="plus" ></button>
+                                        </div>
+                                    </div>
+                                    <div class="product_item_add"><button type="button" onclick="add_cart()"><img src="../images/cart.svg"
+                                                alt=""><span>加入購物車</span></button></div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="product_describe">
+                            <p> "Old-World Emporium" 是一個迷人的商品系列，帶您回到懷舊的時光，探索一個老舊雜貨店的魅力。
+
+這個系列的商品以老舊雜貨店為靈感，展現出濃厚的復古風情和懷舊氛圍。每個商品都細緻地呈現出老舊店面的細節，包括舊式櫥窗、古董家具和陳舊的包裝設計。這些商品帶有一種懷舊情懷，讓人感受到時光的流轉和過去的美好回憶。
+
+"Old-World Emporium" 提供多種款式和設計的商品，適合喜愛復古風格或追求獨特時尚的人們。您可以在這個系列中找到各種類型的商品，例如文具、家居裝飾、食品和飲品，讓您的生活充滿懷舊的味道。
+
+這個系列的商品不僅適合個人使用，也是一個絕佳的禮物選擇。無論是送給喜愛復古風格的朋友，還是作為特別場合的禮品，都能帶給接受者一份獨特和珍貴的體驗。
+
+選擇 "Old-World Emporium"，讓您的生活充滿懷舊的美好，回味過去的時光。這個系列的商品將為您帶來濃郁的復古風情，讓您成為追尋過去魅力的愛好者。</p>
+                        </div>
+                        <div class="product_comment">
+                            <h2>商品評論</h2>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="copyright_line">
+                    <span>sakuranekohon and yufang © 2023</span>
+                </div>
+            </div>
+            <script src="../scripts/product.js"></script>
+            <script src="../scripts/search.js"></script>
+            <script src="../scripts/logSignInOut.js"></script>
+            <script src="../scripts/tagSearch.js"></script>
+            <script src="../scripts/mobileBar.js"></script>
+        </body>
+        
+        </html>
